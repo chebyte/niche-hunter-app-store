@@ -19,7 +19,7 @@ This skill helps you:
 
 ```bash
 # Install the skill
-npx clawhub@latest install nichehunter-app-store
+npx clawhub@latest install niche-hunter-app-store
 ```
 
 ## Prerequisites
