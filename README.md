@@ -1,84 +1,247 @@
-# NicheHunter App Store
+# NicheHunter Ultra — App Store Market Intelligence
 
-Full-pipeline skill for discovering underserved niches in the App Store, analyzing competitor gaps, and generating revenue-validated opportunity reports with MVP PRDs.
+Investor-grade App Store opportunity intelligence skill for OpenClaw (VPS).  
+Discovers underserved niches, analyzes competitors, validates monetization signals, scores opportunities quantitatively, and generates build-ready MVP PRDs.
+
+Designed for headless execution and Telegram interaction.
+
+---
 
 ## What This Skill Does
 
-```
-Define Category → App Store Charts → Competitor Deep-Dive → Gap Analysis → Top 3 Report → PRD
-```
+Category Definition  
+→ Market Demand Discovery  
+→ Competitor Intelligence  
+→ Gap Pattern Extraction  
+→ Quantitative Scoring  
+→ Market Intelligence Report  
+→ MVP PRD (Rork-ready)
 
-This skill helps you:
-- Find profitable app ideas in any category
-- Analyze App Store charts for underserved opportunities
-- Research competitor apps (ratings, reviews, revenue gaps)
-- Generate a top-3 opportunity report with revenue validation
-- Write detailed MVP PRDs optimized for [Rork](https://rork.com/) prototyping
+It does not guess ideas.  
+It analyzes markets.
 
-## Quick Start
+---
+
+## Core Capabilities
+
+- Detect validated demand clusters in any App Store category
+- Analyze 5–8 competitors per niche
+- Extract rating counts, pricing, complaint patterns
+- Validate monetization (direct or proxy revenue estimation)
+- Score opportunities using a weighted quantitative model
+- Produce a structured Market Intelligence Report
+- Generate an investor-grade MVP PRD optimized for Rork
+
+---
+
+## Quick Install
 
 ```bash
-# Install the skill
 npx clawhub@latest install niche-hunter-app-store
 ```
 
-## Prerequisites
+---
 
-- **WebFetch** and **WebSearch** tools available (standard in Claude Code)
-- **Optional**: [Rork](https://rork.com/) account for building prototypes from the PRD
+## Runtime Requirements
 
-## Usage
+Built for:
 
-Trigger phrases:
-- "find app opportunities"
-- "app store research"
-- "what app should I build"
-- "research this app category"
-- "find a gap in the app store"
+- OpenClaw running in a VPS (headless)
+- Telegram chat-based execution
 
-## Example Output
+### Required Tool
 
-### Top 3 Opportunity Report
+- `web_search` — **mandatory**
 
-```markdown
-# Top 3 App Opportunities in Health & Fitness
+If `web_search` is not available, the skill cannot operate.
 
-## Opportunity 1: AR Rep Counter (RECOMMENDED)
-**One-line pitch:** AI-powered AR app that counts workout reps using camera
-**The gap:** No AR rep counter exists in top 25 fitness apps
-**Target user:** Home workout enthusiasts who want form correction
-**Revenue model:** $6.99/mo subscription
-**Competition:** Fitbod (no AR), Strava (no rep counting)
-**Confidence:** HIGH - clear gap, proven willingness to pay
+### Optional Tool
+
+- `web_fetch` — improves structured extraction but not required
+
+No interactive browser needed.
+
+---
+
+## Execution Discipline
+
+To ensure deterministic and professional output:
+
+- Max 18 web_search calls per session
+- Max 20 URLs analyzed
+- Max 8 competitors per niche
+- Max 20 reviews per app (prioritize 1★ and 3★)
+- No duplicate queries
+- Proxy revenue always labeled with confidence level
+
+No speculation presented as fact.
+
+---
+
+## Quantitative Scoring Model
+
+Each opportunity is scored 0–10 across four dimensions:
+
+- Demand Strength (35%)
+- Gap Clarity (30%)
+- Monetization Viability (20%)
+- Build Simplicity (15%)
+
+Weighted Score:
+
+```
+(demand × 0.35) +
+(gap × 0.30) +
+(monetization × 0.20) +
+(build × 0.15)
 ```
 
-## Categories Available
+Every score must be justified with observed signals.
 
-Health & Fitness, Productivity, Finance, Lifestyle, Photo & Video, Education, Entertainment, Food & Drink, Social Networking, Travel, Utilities
+---
 
-## Revenue Benchmarks
+## Example Output (Telegram Format)
 
-| App Type | Solo Dev Benchmark |
-|----------|-------------------|
-| Niche utility | $1-5K/mo |
-| Habit/tracker | $5-15K/mo |
-| Gamified self-care | $10-50K/mo |
-| Productivity | $3-10K/mo |
-| AI-powered tool | $5-30K/mo |
+```
+📊 MARKET INTELLIGENCE REPORT
+Category: Health & Fitness
+Research Confidence: Medium
+```
 
-## Pricing Sweet Spots (2025)
+### 🥇 Opportunity #1 — AI Companion + Pet Fitness
 
-| Tier | Monthly | Best For |
-|------|---------|----------|
-| Impulse | $2.99-4.99 | Simple utilities |
-| **Standard** | **$5.99-6.99** | **Most indie apps** |
-| Premium | $9.99-14.99 | AI-heavy |
+Strategic Positioning:  
+Emotional AI fitness coach with gamified pet mechanics
 
-## Session Output
+Demand Evidence:
+- Finch: 300K+ ratings
+- Tolan: Top 10 Health category
+- Strong emotional wellness demand
 
-A complete session produces:
-1. **Top 3 Opportunity Report** — saved to `research/top-3-opportunities-{category}.md`
-2. **MVP PRD** — saved to `PRD-{AppName}.md`, ready to paste into Rork
+Monetization Evidence:
+- $6.99/mo pricing benchmark
+- Subscription standard across category
+- Proxy revenue estimate based on rating conversion
+
+Gap Evidence:
+- No AI + pet mechanics combined
+- Repeated personalization complaints
+- Weak emotional engagement layer
+
+Quantitative Scoring:
+- Demand: 9/10  
+- Gap: 8/10  
+- Monetization: 8/10  
+- Build Simplicity: 6/10  
+- Weighted Score: 8.2 / 10  
+
+Confidence: Medium–High
+
+---
+
+## Revenue Estimation Model
+
+If direct revenue data is found → use it.
+
+If not:
+
+Freemium:
+```
+Estimated installs ≈ ratings × 100
+```
+
+Paid:
+```
+Estimated installs ≈ ratings × 40
+```
+
+Revenue:
+```
+installs × 3% conversion × subscription price
+```
+
+All proxy estimates labeled:
+High / Medium / Low confidence.
+
+---
+
+## Output Structure
+
+Each complete session produces:
+
+1. Market Intelligence Report (ranked top 3 opportunities)
+2. Quantitative scoring breakdown
+3. Revenue validation logic
+4. Strategic recommendation
+5. Investor-grade MVP PRD (after user selection)
+
+---
+
+## PRD Output
+
+After selecting an opportunity, the skill generates:
+
+- Executive Summary
+- Market Validation
+- Target Personas
+- Core Wedge Strategy
+- MVP Feature Groups
+- Screen Architecture (Expo Router structure)
+- Monetization Strategy
+- Tech Stack (Expo SDK 52+, TypeScript)
+- Design System (hex colors included)
+- KPIs
+- Risk Analysis
+
+PRD is copy-paste ready for:
+https://rork.com/
+
+---
+
+## Categories Supported
+
+Any iOS category, including:
+
+- Health & Fitness  
+- Productivity  
+- Education  
+- Finance  
+- Lifestyle  
+- Photo & Video  
+- Entertainment  
+- Food & Drink  
+- Social Networking  
+- Travel  
+- Utilities  
+
+---
+
+## Ideal Use Cases
+
+- Indie founders validating app ideas
+- Product builders seeking underserved niches
+- AI builders searching monetizable verticals
+- Telegram-based research workflows
+- OpenClaw autonomous market analysis
+
+---
+
+## Design Philosophy
+
+NicheHunter Ultra is not an idea generator.  
+It is a structured market analysis engine.
+
+Every recommendation must show:
+
+- Demand evidence
+- Gap evidence
+- Monetization logic
+- Quantitative scoring
+- Confidence level
+
+No hype. Only signals.
+
+---
 
 ## License
 
