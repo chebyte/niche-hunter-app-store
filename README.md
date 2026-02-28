@@ -18,7 +18,7 @@ Category Definition
 → Market Intelligence Report  
 → MVP PRD (Rork-ready)
 
-This is not an idea generator.
+This is not an idea generator.  
 It is a structured market analysis engine.
 
 ---
@@ -40,13 +40,23 @@ Built for:
 
 ### Required
 
-- `web_search` (mandatory)
+At least ONE of the following tools must be available:
 
-### Optional
+- `web_search`
+- `web_fetch`
 
-- `web_fetch` (recommended)
+If neither is available, the skill cannot operate.
 
-No browser interaction required.
+No interactive browser required.
+
+---
+
+## Adaptive Tool Behavior
+
+- If `web_search` is available → used for market discovery.
+- If `web_fetch` is available → used for structured data extraction.
+- If both are available → discovery + extraction combined.
+- If only one is available → the skill adapts automatically.
 
 ---
 
@@ -66,13 +76,13 @@ Weighted formula:
 (monetization × 0.20) +
 (build × 0.15)
 
-All scores must be justified with observed signals.
+All scores must be justified with observed evidence.
 
 ---
 
 ## Revenue Estimation Logic
 
-If direct revenue data exists → use it.
+If direct revenue data exists → used directly.
 
 Otherwise:
 
@@ -85,45 +95,32 @@ Estimated installs ≈ ratings × 40
 Revenue estimate:
 installs × 3% × subscription price
 
-All proxy data labeled with confidence level.
+All proxy data clearly labeled with confidence level.
 
 ---
 
 ## Output Structure
 
-Each full session produces:
+Each session produces:
 
-1) Market Intelligence Report (ranked top 3)
+1) Market Intelligence Report (ranked top 3 opportunities)
 2) Quantitative scoring breakdown
-3) Monetization logic
-4) Strategic recommendation
-5) Investor-grade MVP PRD
+3) Monetization logic explanation
+4) Strategic conclusion
+5) Investor-grade MVP PRD (after selection)
 
----
-
-## Example Report Structure
-
-📊 MARKET INTELLIGENCE REPORT  
-Category: Health & Fitness  
-Research Confidence: Medium  
-
-Includes:
-
-- Demand Evidence
-- Monetization Evidence
-- Gap Evidence
-- Build Complexity Assessment
-- Quantitative Scoring
-- Confidence Level
-
-No hype. Only signals.
+Outputs are optimized for Telegram:
+- Vertical layout
+- No ASCII tables
+- No wide formatting
+- Structured blocks
 
 ---
 
 ## Ideal For
 
 - Indie founders validating app ideas
-- AI builders seeking monetizable verticals
+- AI builders searching monetizable verticals
 - Telegram-based research workflows
 - OpenClaw autonomous market analysis
 
@@ -137,9 +134,9 @@ NicheHunter Ultra enforces:
 - Quantitative scoring
 - Revenue validation
 - Structured reporting
-- Professional-grade output
+- Confidence labeling
 
-This ensures outputs resemble market intelligence reports, not idea summaries.
+No hype. Only signals.
 
 ---
 
